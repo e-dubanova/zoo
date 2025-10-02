@@ -13,12 +13,10 @@ abstract class Animal
   // Логично, что лев Аркадий будет один в зоопарке.
   protected string $name; // Имя  
   protected string $nutritionType; // Тип питания
-  protected $cageId; //идентификатор клетки
    
-  public function __construct($name, $cageId = NULL)
+  public function __construct($name)
   {
     $this->name = $name;
-    $this->cageId = $cageId;
   }
 
   /**

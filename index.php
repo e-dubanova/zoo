@@ -17,8 +17,9 @@ $crok = new Crocodile("Мистер Крок");
 $dambo = new Elephant("Дамбо");
 
 $cage1 = new Cage(1);
-$cage1->clean();
 try {
+  $cage1->clean();
+
   $cage1->placeAnimal($arcadiy);
   $cage1->placeAnimal($simba);
   $cage1->placeAnimal($dambo);
@@ -27,16 +28,18 @@ try {
 }
 
 $cage2 = new Cage(2);
-$cage2->clean();
 try {
+  $cage2->clean();
+
   $cage2->placeAnimal($dambo);
 } catch (Exception $e) {
   echo $e->getMessage() . '<br>';
 }
 
 $cage3 = new Cage(3);
-$cage3->clean();
 try {
+  $cage3->clean();
+
   $cage3->placeAnimal($mufassa);
   $cage3->takeAnimal($mufassa);
 
@@ -58,3 +61,16 @@ $mufassa->growl();
 $simba->growl();
 $dambo->spraysItselfWithItsTrunk();
 $gena->swim();
+
+echo '<br>';
+$cage2->takeAnimal($dambo);
+try {
+  $cage2->clean();
+} catch (Exception $e) {
+  echo $e->getMessage() . '<br>';
+}
+$cage2->feedAnimals();
+$cage1->takeAnimal($simba);
+$cage2->placeAnimal($simba);
+$cage2->takeAnimal($simba);
+$cage2->placeAnimal($dambo);

@@ -105,6 +105,9 @@ class Cage
         return $animalInCage->getName() !== $animal->getName();
       }
     );
+    if($this->isEmpty()) {
+      $this->animalType = '';
+    }
     echo "Из клетки " . $this->id . " забрали " . $animal->getName() . '<br>';
   }
   /**
